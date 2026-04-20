@@ -1,58 +1,49 @@
 # Dynamic Memory Allocator in C
 
 ## Overview
-This project implements a custom dynamic memory allocator in C, similar to malloc and free.  
-It is designed to efficiently manage heap memory using advanced techniques such as segregated free lists and boundary tag coalescing.
+This project implements a custom dynamic memory allocator in C, similar to `malloc` and `free`.
+It is designed to efficiently manage heap memory using techniques such as segregated free lists and boundary tag coalescing.
 
 The allocator supports dynamic memory allocation, deallocation, and reallocation while minimizing fragmentation and maintaining performance.
 
----
-
 ## Features
-- Segregated free lists organized by size classes  
-- First-fit allocation strategy for fast allocation  
-- LIFO (Last-In-First-Out) free list management  
-- Boundary tag coalescing for merging adjacent free blocks  
-- Block splitting to optimize memory utilization  
-- Heap extension for handling large allocations  
-
----
+- Segregated free lists organized by size classes
+- First-fit allocation strategy for fast allocation
+- LIFO (Last-In-First-Out) free list management
+- Boundary tag coalescing for merging adjacent free blocks
+- Block splitting to optimize memory utilization
+- Heap extension for handling large allocations
 
 ## Concepts Covered
-- Heap memory management  
-- Pointer arithmetic  
-- Internal vs external fragmentation  
-- Free list management  
-- Coalescing and block splitting  
-- Low-level systems programming in C  
-
----
+- Heap memory management
+- Pointer arithmetic
+- Internal vs external fragmentation
+- Free list management
+- Coalescing and block splitting
+- Low-level systems programming in C
 
 ## Project Structure
-
-dynamic-memory-allocator-c/
+```text
+dynamic-memory-allocator/
 ├── src/
-│   └── allocator.c        # Core allocator implementation  
+│   └── allocator.c
 ├── include/
-│   └── debug.h            # Debugging utilities  
+│   └── debug.h
 ├── examples/
-│   └── demo.c             # Sample usage of allocator  
-├── Makefile  
-├── README.md  
-
----
+│   └── demo.c
+├── Makefile
+└── README.md
+```
 
 ## Build Instructions
-
+```bash
 make
-
----
+```
 
 ## Run
-
+```bash
 ./allocator
-
----
+```
 
 ## Key Design Details
 
@@ -68,23 +59,17 @@ Adjacent free blocks are merged using boundary tags to reduce external fragmenta
 ### Block Splitting
 Large blocks are split into smaller blocks when possible to maximize memory utilization.
 
----
-
 ## Key Learnings
-- Trade-offs between allocation speed and memory utilization  
-- Efficient memory reuse through coalescing  
-- Handling fragmentation in dynamic memory systems  
-- Designing low-level systems with manual memory management  
-
----
+- Trade-offs between allocation speed and memory utilization
+- Efficient memory reuse through coalescing
+- Handling fragmentation in dynamic memory systems
+- Designing low-level systems with manual memory management
 
 ## Future Improvements
-- Implement best-fit or next-fit allocation strategies  
-- Add thread-safety for concurrent environments  
-- Benchmark against standard malloc implementations  
-- Improve performance with caching techniques  
-
----
+- Implement best-fit or next-fit allocation strategies
+- Add thread-safety for concurrent environments
+- Benchmark against standard `malloc` implementations
+- Improve performance with caching techniques
 
 ## Author
 Manasa Mummadi
